@@ -1,0 +1,392 @@
+body {
+    /* background-image: linear-gradient(to bottom, #667eea, #764ba2);  */
+
+    background: url(/static/images/bgimage.jpg) fixed center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/static/images/bgimage.jpg);
+    background-size: cover;
+    background-position: center;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    animation: fade-in 1s ease-in-out;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    z-index: 999;
+    transition: background-color 0.3s;
+    background-color: #ffffff00;
+
+}
+
+.navbar .heading {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+
+/* Body of the page. */
+
+
+
+form h4 {
+    text-align: center;
+    margin-top: 45px;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.608);
+    max-width: 600px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+label[for=area],
+label[for=locality],
+label[for=bhk],
+label[for=bathroom],
+label[for=parking],
+label[for=type] {
+    display: inline-block;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+label[for=furnished],
+label[for=Semi-Furnished],
+label[for=Unfurnished],
+label[for=Furnished],
+label[for=transaction],
+label[for=New_Property],
+label[for=Resale],
+label[for=status],
+label[for=Ready_to_move],
+label[for=Almost_ready],
+label[for=area_unit],
+label[for=sqft],
+label[for=sqmt] {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+
+#area {
+    width: 32%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+.area_unit {
+    width: 36%;
+    text-align: center;
+}
+
+#bhk,
+#bathroom,
+#parking,
+#type {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+#locality {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+.furnished,
+.transaction,
+.status {
+    width: 100%;
+    text-align: center;
+}
+
+input[type="radio"] {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    text-decoration: none;
+    width: auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: 0.3s all;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+    padding: 10px 25px;
+}
+
+.back {
+    text-decoration: none;
+    width: auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: 0.3s all;
+}
+
+.back:hover {
+    background-color: #45a049;
+    padding: 10px 25px;
+}
+
+
+
+
+
+.section {
+    max-width: 600px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.608);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: justify;
+}
+
+.section h4 {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* footer of the page */
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.social-media {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.social-link {
+    display: inline-block;
+    margin-left: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+.footer .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* <!-- aarsh saxena 21bec001 --> */
+
+
+
+/* Mobile */
+@media (max-width: 767px) {
+    .navbar .heading {
+        font-size: 24px;
+    }
+    /* <!-- aarsh saxena 21bec001 --> */
+    form {
+        padding: 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-bottom: 50px;
+    }
+
+    label[for=area],
+    label[for=locality],
+    label[for=bhk],
+    label[for=bathroom],
+    label[for=parking],
+    label[for=type] {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* <!-- aarsh saxena 21bec001 --> */
+
+    #area,
+    input[type="text"],
+    #bhk,
+    #parking,
+    #bathroom,
+    #type,
+    #locality {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    /* <!-- aarsh saxena 21bec001 --> */
+    .area_unit {
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+    .section {
+        padding: 10px;
+        margin-top: 20px;
+
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+}
+
+/* <!-- aarsh saxena 21bec001 --> */
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    form {
+        max-width: 800px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    #area,
+    input[type="text"],
+    select,
+    #locality {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    /* <!-- aarsh saxena 21bec001 --> */
+    .area_unit {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* <!-- aarsh saxena 21bec001 --> */
+
+
+
+    .section {
+        max-width: 800px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    form {
+        max-width: 1000px;
+    }
+    /* <!-- aarsh saxena 21bec001 --> */
+    .section {
+        max-width: 1000px;
+    }
+
+}
