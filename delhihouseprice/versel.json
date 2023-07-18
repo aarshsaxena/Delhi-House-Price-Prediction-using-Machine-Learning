@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "delhihouseprice/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "delhihouseprice/wsgi.py"
+      }
+    ]
+}
