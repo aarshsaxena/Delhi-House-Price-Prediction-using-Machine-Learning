@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delhi-House-Price-Prediction</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.1/font/bootstrap-icons.min.css">
+  <script src="/static/javascript/script1.js"></script>
+
+
+</head>
+
+<!-- aarsh saxena 21bec001 -->
+
+<body>
+
+
+
+
+  <header class="navbar">
+    <div class="container">
+      <div class="heading"> Delhi House Price Prediction </div>
+    </div>
+  </header>
+
+  <div style="width: 100%; height: 80px; margin-top: 0px;"></div>
+  {% if messages %}
+  {% for message in messages %}
+  {{ message.tags }} {{ message }}
+  {% endfor %}
+  {% endif %}
+
+
+  <div style="width: 100%; height: 0%;"></div>
+  {% if check %}
+  
+  <div class="section">
+    <h4>Estimated Price: Rs {{price}} Lakhs</h4>
+    <div style="width: 100%; height: 0%;"></div>
+    <a href="/" class="back">Predict Again</a>
+
+</div>
+  
+
+  {% else %}
+
+  <!-- Form content -->
+  <form action="/" method="POST">
+    {% csrf_token %}
+    <h4>Get Your Prediction Here!</h4>
+    <div style="width: 100%;"></div>
+
+    <!-- message -->
+
+
+
+    <!-- first row  -->
+
+    <label for="area">Area:</label>
+    <input type="number" id="area" name="area" required>
+
+    <span class="area_unit">
+      <label for="area_unit">Area Unit:</label>
+      <input type="radio" id="sqft" name="area_unit" value="sqft" required>
+      <label for="sqft">SqFeet</label>
+      <input type="radio" id="sqmt" name="area_unit" value="sqmt" required>
+      <label for="sqmt">SqMeter</label></span>
+
+
+    <div style="width: 100%; height: 0%;"></div>
+
+    <!-- second row -->
+
+    <label for="locality">Locality:</label>
+    <select id="locality" name="locality">
+      <option value="">Select</option>
+      {% for i in localities %}
+      <option value="{{i}}">{{i}}</option>
+      {% endfor %}
+    </select>
+    <div style="width: 100%; height: 0%;"></div>
+
+    <!-- third row -->
+
+    <label for="bhk">BHK:</label>
+    <select id="bhk" name="bhk" required>
+      <option value="">Select</option>
+      <option value="1">1 BHK</option>
+      <option value="2">2 BHK</option>
+      <option value="3">3 BHK</option>
+      <option value="4">4 BHK</option>
+      <option value="5">5 BHK</option>
+    </select>
+
+    <label for="bathroom">Bathroom:</label>
+    <select id="bathroom" name="bathroom" required>
+      <option value="">Select</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <div style="width: 100%; height: 0%;"></div>
+
+    <!-- fourth row -->
+
+    <label for="parking">Parking</label>
+    <select name="parking" id="parking" required>
+      <option value="">Select</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+
+    <label for="type">Type</label>
+    <select name="type" id="type">
+      <option value="">Select</option>
+      <option value="0">Apartment</option>
+      <option value="1">Builder Floor</option>
+    </select>
+
+
+    <div style="width: 100%; height: 0%;"></div>
+
+    <!-- fifth row -->
+
+    <span class="transaction">
+      <label for="transaction">Transaction:</label>
+      <input type="radio" id="New_Property" name="transaction" value="0" required>
+      <label for="New_Property">New Property</label>
+      <input type="radio" id="Resale" name="transaction" value="1" required>
+      <label for="Resale">Resale</label>
+    </span>
+
+
+    <span class="furnished">
+      <label for="furnished">Furnished:</label>
+      <input type="radio" id="Semi-Furnished" name="furnished" value="1" required>
+      <label for="Semi-Furnished">Semi-Furnished</label>
+      <input type="radio" id="Unfurnished" name="furnished" value="0" required>
+      <label for="Unfurnished">Unfurnished</label>
+      <input type="radio" id="Furnished" name="furnished" value="2" required>
+      <label for="Furnished">Furnished</label>
+    </span>
+
+
+    <span class="status">
+      <label for="status">Status:</label>
+      <input type="radio" id="Ready_to_move" name="status" value="0" required>
+      <label for="Ready_to_move">Ready to move</label>
+      <input type="radio" id="Almost_ready" name="status" value="1" required>
+      <label for="Almost_ready">Almost ready</label>
+    </span>
+    <div style="width: 100%; height: 0%;"></div>
+
+
+
+
+    <br>
+    <input type="submit" value="Submit">
+    <br>
+  </form>
+
+  <!-- aarsh saxena 21bec001 -->
+
+  {% endif %}
+
+
+
+  <div class="section">
+    <!-- about the project section -->
+    <h4>About the Project</h4>
+    <p>
+      Delhi House Price Prediction using Machine Learning is a service that helps you estimate the price of a house based on various
+      factors such as the area, number of bedrooms, bathrooms, furnished status, locality, parking
+      availability, and house type. Simply fill in the form above with the required information, and our
+      prediction algorithm will provide you with an estimate of the house price. <br><br>
+
+      This is based upon the linear regression model and cross validation method is used for finding correct model. <br><br>
+
+      Kaggle is used for dataset collection. Pipeline created in Jupyter Notebook in which Sklearn is used for model building. NumPy and Pandas is used for data manipulation, removing outliners, data cleaning. Matplotlib is used for Data Visualization.  <br><br>
+
+      Entire backend is build on Django and Frontend is build on HTML, CSS and JavaScript.
+    </p>
+  </div>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2023 Delhi House Price Prediction. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <ul class="list-inline social-media">
+            <li class="list-inline-item"><a href="https://github.com/aarshsaxena/" class="social-link" target="_blank"><i class="bi bi-github"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.linkedin.com/in/aarshsaxena/" class="social-link" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/aarshsaxena9/" class="social-link" target="_blank"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<!-- aarsh saxena 21bec001 -->
+
+
+  <script src="/static/javascript/script1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
